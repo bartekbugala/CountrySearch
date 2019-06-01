@@ -29,8 +29,12 @@
 
     function showCountriesList(resp) {
         countriesList.innerHTML = '';
-      }
-
+        resp.forEach(function(item){
+            let liEl = document.createElement('li');
+            liEl.innerText = item.name;
+            countriesList.appendChild(liEl);
+        });
+    }
 
 
 
