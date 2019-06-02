@@ -1,15 +1,10 @@
 'use strict';
 (function () {
 
-
-
-
-
     const searchButton = document.getElementById('search');
+    const restCountriesUrl = 'https://restcountries.eu/rest/v2/name/';
 
-    const restCountriesUrl = 'https://restcountries.eu/rest/v1/name/';
     let countriesList = document.getElementById('countries');
-    
 
     searchButton.addEventListener('click', searchCountries);
 
@@ -17,10 +12,7 @@
         let countryName = document.getElementById('country-name').value;
         if (!countryName.length) countryName = 'Poland';
 
-        // CORS fix
-       // let prefix = "https://cors-anywhere.herokuapp.com/";
-
-        fetch(/*prefix +*/ restCountriesUrl + countryName)
+        fetch(restCountriesUrl + countryName)
             .then(function (resp) {
                 return resp.json();
             })
@@ -31,12 +23,11 @@
         countriesList.innerHTML = '';
         resp.forEach(function(item){
             let liEl = document.createElement('li');
-            liEl.innerText = item.name;
+            liEl.classList.add('row');
+            liEl.innerHTML = `<span class="col-6">${item.name}</span>`;
+            liEl.innerHTML += `<span class="col-6"><img class="country-flag"src="${item.flag}" alt="flag"></span>`;
             countriesList.appendChild(liEl);
         });
     }
-
-
-
 
 })();

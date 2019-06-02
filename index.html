@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Country Search</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-</head>
-
-<body>
-  <style>
-
-  </style>
-  <main class="container text-center">
-    <header>
-      <h1>Random quote machine</h1>
-    </header>
-    <h1>Country search engine</h1>
-    <button id="search">Search a country</button>
-    <input id="country-name" type="text" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Country Search + Fun with flags</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body class="text-center">
+    <style>
+      li {
+        padding: 5px;
+      }
+      .country-flag {
+        display: inline-block;
+        max-width: 50px;
+        height: auto;
+      }
+    </style>
+    <h1>Country search engine + fun with flags</h1>
+    <div class="input-group-text container mb-3 mt-2">
+      <input class="form-inline form-control mx-sm-3 mb-2 mt-2" id="country-name" type="text" />
+      <button class="btn btn-primary" id="search">Search a country</button>
+    </div>
     <h2>List of countries</h2>
-    <ul id="countries">
-      <li>No data</li>
+    <ul id="countries" class="container text-center">
+      <li class="text-center">No data</li>
     </ul>
     <script src="countrySearch.js"></script>
-</body>
-
+  </body>
 </html>
