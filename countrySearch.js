@@ -11,7 +11,7 @@
     // Code 13 = Enter
     if (event.keyCode === 13) {
       event.preventDefault();
-      searchButton.click();
+      searchCountries();
     }
   });
 
