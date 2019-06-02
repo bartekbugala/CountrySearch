@@ -8,11 +8,15 @@
   searchButton.addEventListener("click", searchCountries);
 
   document.getElementById("country-name").addEventListener("keydown", function(event) {
+    // searchCountries(); - automatyczne szukanie po wpisaniu frazy
     // Code 13 = Enter
+    
     if (event.keyCode === 13) {
       event.preventDefault();
-      searchButton.click();
+      //searchButton.click(); // Symulowanie kliknięcia
+      searchCountries();
     }
+
   });
 
   function searchCountries() {
