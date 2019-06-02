@@ -8,6 +8,14 @@
 
     searchButton.addEventListener('click', searchCountries);
 
+    document.getElementById('country-name').addEventListener('keydown', function (event) {
+        // Code 13 = Enter
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            searchButton.click();
+        }
+    });
+
     function searchCountries() {
         let countryName = document.getElementById('country-name').value;
         if (!countryName.length) countryName = 'Poland';
